@@ -1,0 +1,20 @@
+{
+  "collectionName": "components_content_brand_specialties",
+  "info": {
+    "displayName": "brand-specialty"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "maxLength": 60,
+      "required": true
+    },
+    "description": {
+      "type": "string",
+      "maxLength": 250,
+      "required": true
+    }
+  },
+  "config": {}
+}
