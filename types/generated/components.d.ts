@@ -1,5 +1,24 @@
 import type { Schema, Struct } from '@strapi/strapi';
 
+export interface ContentBrandSpecialty extends Struct.ComponentSchema {
+  collectionName: 'components_content_brand_specialties';
+  info: {
+    displayName: 'brand-specialty';
+  };
+  attributes: {
+    description: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 250;
+      }>;
+    name: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 60;
+      }>;
+  };
+}
+
 export interface LayoutSocialLink extends Struct.ComponentSchema {
   collectionName: 'components_layout_social_links';
   info: {
@@ -56,6 +75,7 @@ export interface SeoSeo extends Struct.ComponentSchema {
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
+      'content.brand-specialty': ContentBrandSpecialty;
       'layout.social-link': LayoutSocialLink;
       'seo.seo': SeoSeo;
     }
