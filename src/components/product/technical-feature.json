@@ -1,0 +1,20 @@
+{
+  "collectionName": "components_product_technical_features",
+  "info": {
+    "displayName": "technical-feature"
+  },
+  "options": {},
+  "attributes": {
+    "feature": {
+      "type": "string",
+      "maxLength": 60,
+      "required": true
+    },
+    "description": {
+      "type": "string",
+      "maxLength": 80,
+      "required": true
+    }
+  },
+  "config": {}
+}

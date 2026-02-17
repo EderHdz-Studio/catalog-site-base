@@ -1,0 +1,37 @@
+{
+  "kind": "collectionType",
+  "collectionName": "purchase_benefits",
+  "info": {
+    "singularName": "purchase-benefit",
+    "pluralName": "purchase-benefits",
+    "displayName": "Beneficios de compra"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": false
+    }
+  },
+  "attributes": {
+    "benefit": {
+      "type": "string",
+      "maxLength": 80,
+      "required": true
+    },
+    "description": {
+      "type": "string",
+      "maxLength": 250,
+      "required": true
+    },
+    "icon": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    }
+  }
+}

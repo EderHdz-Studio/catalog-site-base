@@ -1,0 +1,20 @@
+{
+  "collectionName": "components_product_faq_items",
+  "info": {
+    "displayName": "faq-Item"
+  },
+  "options": {},
+  "attributes": {
+    "question": {
+      "type": "string",
+      "maxLength": 200,
+      "required": true
+    },
+    "answer": {
+      "type": "string",
+      "maxLength": 250,
+      "required": true
+    }
+  },
+  "config": {}
+}

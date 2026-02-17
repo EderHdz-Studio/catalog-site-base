@@ -48,6 +48,12 @@
       "type": "component",
       "component": "seo.seo",
       "repeatable": false
+    },
+    "products": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::product.product",
+      "mappedBy": "brand"
     }
   }
 }

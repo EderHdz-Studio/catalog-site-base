@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_product_technical_specifications",
+  "info": {
+    "displayName": "technical-Specifications"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "maxLength": 120,
+      "required": true
+    },
+    "description": {
+      "type": "text"
+    },
+    "image": {
+      "type": "media",
+      "multiple": true,
+      "allowedTypes": [
+        "images"
+      ]
+    }
+  },
+  "config": {}
+}
