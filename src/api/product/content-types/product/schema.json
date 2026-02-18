@@ -11,14 +11,13 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "title": {
+    "name": {
       "type": "string",
       "maxLength": 120,
       "required": true
     },
     "slug": {
       "type": "uid",
-      "targetField": "title",
       "required": true
     },
     "shortDescription": {
@@ -102,7 +101,7 @@
       "relation": "oneToMany",
       "target": "api::product.product"
     },
-    "subcategories": {
+    "subcategory": {
       "type": "relation",
       "relation": "manyToOne",
       "target": "api::subcategory.subcategory",

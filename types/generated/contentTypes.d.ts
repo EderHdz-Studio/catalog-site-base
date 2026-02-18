@@ -441,10 +441,6 @@ export interface ApiBrandBrand extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
-    brandDescription: Schema.Attribute.Text &
-      Schema.Attribute.SetMinMaxLength<{
-        maxLength: 800;
-      }>;
     brandEspecialties: Schema.Attribute.Component<
       'content.brand-specialty',
       true
@@ -458,6 +454,10 @@ export interface ApiBrandBrand extends Struct.CollectionTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    description: Schema.Attribute.Text &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 800;
+      }>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::brand.brand'> &
       Schema.Attribute.Private;
@@ -475,6 +475,11 @@ export interface ApiBrandBrand extends Struct.CollectionTypeSchema {
     publishedAt: Schema.Attribute.DateTime;
     SEO: Schema.Attribute.Component<'seo.seo', false>;
     slug: Schema.Attribute.UID<'name'> & Schema.Attribute.Required;
+    title: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 180;
+      }>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -495,6 +500,7 @@ export interface ApiCategoryCategory extends Struct.CollectionTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    figure: Schema.Attribute.Media<'images'>;
     heroDescription: Schema.Attribute.Text &
       Schema.Attribute.Required &
       Schema.Attribute.SetMinMaxLength<{
@@ -516,8 +522,7 @@ export interface ApiCategoryCategory extends Struct.CollectionTypeSchema {
       Schema.Attribute.SetMinMaxLength<{
         maxLength: 60;
       }>;
-    navImage: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
-    Order: Schema.Attribute.Integer;
+    order: Schema.Attribute.Integer;
     publishedAt: Schema.Attribute.DateTime;
     SEO: Schema.Attribute.Component<'seo.seo', false>;
     shortDescription: Schema.Attribute.String &
@@ -576,6 +581,11 @@ export interface ApiProductProduct extends Struct.CollectionTypeSchema {
       'api::product.product'
     > &
       Schema.Attribute.Private;
+    name: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 120;
+      }>;
     price: Schema.Attribute.Decimal;
     publishedAt: Schema.Attribute.DateTime;
     relatedConsumables: Schema.Attribute.Relation<
@@ -595,8 +605,8 @@ export interface ApiProductProduct extends Struct.CollectionTypeSchema {
       Schema.Attribute.SetMinMaxLength<{
         maxLength: 25;
       }>;
-    slug: Schema.Attribute.UID<'title'> & Schema.Attribute.Required;
-    subcategories: Schema.Attribute.Relation<
+    slug: Schema.Attribute.UID & Schema.Attribute.Required;
+    subcategory: Schema.Attribute.Relation<
       'manyToOne',
       'api::subcategory.subcategory'
     >;
@@ -605,11 +615,6 @@ export interface ApiProductProduct extends Struct.CollectionTypeSchema {
       'product.technical-specifications',
       true
     >;
-    title: Schema.Attribute.String &
-      Schema.Attribute.Required &
-      Schema.Attribute.SetMinMaxLength<{
-        maxLength: 120;
-      }>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -628,11 +633,6 @@ export interface ApiPurchaseBenefitPurchaseBenefit
   options: {
     draftAndPublish: true;
   };
-  pluginOptions: {
-    i18n: {
-      localized: false;
-    };
-  };
   attributes: {
     benefit: Schema.Attribute.String &
       Schema.Attribute.Required &
@@ -647,7 +647,7 @@ export interface ApiPurchaseBenefitPurchaseBenefit
       Schema.Attribute.SetMinMaxLength<{
         maxLength: 250;
       }>;
-    icon: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
+    icon: Schema.Attribute.Media<'images'>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',

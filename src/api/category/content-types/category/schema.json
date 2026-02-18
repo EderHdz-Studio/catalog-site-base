@@ -47,15 +47,15 @@
       "maxLength": 800,
       "required": true
     },
-    "navImage": {
+    "figure": {
       "type": "media",
       "multiple": false,
-      "required": true,
+      "required": false,
       "allowedTypes": [
         "images"
       ]
     },
-    "Order": {
+    "order": {
       "type": "integer"
     },
     "isActive": {

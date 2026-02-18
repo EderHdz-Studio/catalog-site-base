@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "2026-02-18T00:56:13.933Z"
+    "x-generation-date": "2026-02-18T17:33:32.420Z"
   },
   "x-strapi-config": {
     "plugins": [
@@ -4353,7 +4353,8 @@
             "required": [
               "name",
               "slug",
-              "logo"
+              "logo",
+              "title"
             ],
             "type": "object",
             "properties": {
@@ -4377,7 +4378,10 @@
               "primaryColor": {
                 "type": "string"
               },
-              "brandDescription": {
+              "title": {
+                "type": "string"
+              },
+              "description": {
                 "type": "string"
               },
               "brandEspecialties": {
@@ -4464,7 +4468,8 @@
         "required": [
           "name",
           "slug",
-          "logo"
+          "logo",
+          "title"
         ],
         "properties": {
           "id": {
@@ -5297,7 +5302,10 @@
           "primaryColor": {
             "type": "string"
           },
-          "brandDescription": {
+          "title": {
+            "type": "string"
+          },
+          "description": {
             "type": "string"
           },
           "brandEspecialties": {
@@ -5327,7 +5335,7 @@
                 "documentId": {
                   "type": "string"
                 },
-                "title": {
+                "name": {
                   "type": "string"
                 },
                 "slug": {
@@ -6054,7 +6062,7 @@
                     }
                   }
                 },
-                "subcategories": {
+                "subcategory": {
                   "type": "object",
                   "properties": {
                     "id": {
@@ -6629,7 +6637,7 @@
                         "heroDescription": {
                           "type": "string"
                         },
-                        "navImage": {
+                        "figure": {
                           "type": "object",
                           "properties": {
                             "id": {
@@ -6800,7 +6808,7 @@
                             }
                           }
                         },
-                        "Order": {
+                        "order": {
                           "type": "integer"
                         },
                         "isActive": {
@@ -7195,7 +7203,10 @@
                     "primaryColor": {
                       "type": "string"
                     },
-                    "brandDescription": {
+                    "title": {
+                      "type": "string"
+                    },
+                    "description": {
                       "type": "string"
                     },
                     "brandEspecialties": {
@@ -7951,7 +7962,6 @@
               "shortDescription",
               "heroImage",
               "heroDescription",
-              "navImage",
               "isActive"
             ],
             "type": "object",
@@ -7990,7 +8000,7 @@
               "heroDescription": {
                 "type": "string"
               },
-              "navImage": {
+              "figure": {
                 "oneOf": [
                   {
                     "type": "integer"
@@ -8001,7 +8011,7 @@
                 ],
                 "example": "string or id"
               },
-              "Order": {
+              "order": {
                 "type": "integer"
               },
               "isActive": {
@@ -8089,7 +8099,6 @@
           "shortDescription",
           "heroImage",
           "heroDescription",
-          "navImage",
           "isActive"
         ],
         "properties": {
@@ -9097,7 +9106,7 @@
           "heroDescription": {
             "type": "string"
           },
-          "navImage": {
+          "figure": {
             "type": "object",
             "properties": {
               "id": {
@@ -9268,7 +9277,7 @@
               }
             }
           },
-          "Order": {
+          "order": {
             "type": "integer"
           },
           "isActive": {
@@ -9854,7 +9863,7 @@
                     "heroDescription": {
                       "type": "string"
                     },
-                    "navImage": {
+                    "figure": {
                       "type": "object",
                       "properties": {
                         "id": {
@@ -10025,7 +10034,7 @@
                         }
                       }
                     },
-                    "Order": {
+                    "order": {
                       "type": "integer"
                     },
                     "isActive": {
@@ -10147,7 +10156,7 @@
                       "documentId": {
                         "type": "string"
                       },
-                      "title": {
+                      "name": {
                         "type": "string"
                       },
                       "slug": {
@@ -10874,7 +10883,7 @@
                           }
                         }
                       },
-                      "subcategories": {
+                      "subcategory": {
                         "type": "object",
                         "properties": {
                           "id": {
@@ -11088,7 +11097,10 @@
                           "primaryColor": {
                             "type": "string"
                           },
-                          "brandDescription": {
+                          "title": {
+                            "type": "string"
+                          },
+                          "description": {
                             "type": "string"
                           },
                           "brandEspecialties": {
@@ -11438,7 +11450,7 @@
         "properties": {
           "data": {
             "required": [
-              "title",
+              "name",
               "slug",
               "shortDescription",
               "description",
@@ -11447,7 +11459,7 @@
             ],
             "type": "object",
             "properties": {
-              "title": {
+              "name": {
                 "type": "string"
               },
               "slug": {
@@ -11577,7 +11589,7 @@
                   "example": "string or id"
                 }
               },
-              "subcategories": {
+              "subcategory": {
                 "oneOf": [
                   {
                     "type": "integer"
@@ -11658,7 +11670,7 @@
       "Product": {
         "type": "object",
         "required": [
-          "title",
+          "name",
           "slug",
           "shortDescription",
           "description",
@@ -11679,7 +11691,7 @@
           "documentId": {
             "type": "string"
           },
-          "title": {
+          "name": {
             "type": "string"
           },
           "slug": {
@@ -12998,7 +13010,7 @@
                 "documentId": {
                   "type": "string"
                 },
-                "title": {
+                "name": {
                   "type": "string"
                 },
                 "slug": {
@@ -13476,7 +13488,7 @@
                     }
                   }
                 },
-                "subcategories": {
+                "subcategory": {
                   "type": "object",
                   "properties": {
                     "id": {
@@ -14051,7 +14063,7 @@
                         "heroDescription": {
                           "type": "string"
                         },
-                        "navImage": {
+                        "figure": {
                           "type": "object",
                           "properties": {
                             "id": {
@@ -14222,7 +14234,7 @@
                             }
                           }
                         },
-                        "Order": {
+                        "order": {
                           "type": "integer"
                         },
                         "isActive": {
@@ -14617,7 +14629,10 @@
                     "primaryColor": {
                       "type": "string"
                     },
-                    "brandDescription": {
+                    "title": {
+                      "type": "string"
+                    },
+                    "description": {
                       "type": "string"
                     },
                     "brandEspecialties": {
@@ -14841,7 +14856,7 @@
               }
             }
           },
-          "subcategories": {
+          "subcategory": {
             "type": "object",
             "properties": {
               "id": {
@@ -14971,8 +14986,7 @@
           "data": {
             "required": [
               "benefit",
-              "description",
-              "icon"
+              "description"
             ],
             "type": "object",
             "properties": {
@@ -15053,8 +15067,7 @@
         "type": "object",
         "required": [
           "benefit",
-          "description",
-          "icon"
+          "description"
         ],
         "properties": {
           "id": {
@@ -19276,7 +19289,7 @@
               "heroDescription": {
                 "type": "string"
               },
-              "navImage": {
+              "figure": {
                 "type": "object",
                 "properties": {
                   "id": {
@@ -19447,7 +19460,7 @@
                   }
                 }
               },
-              "Order": {
+              "order": {
                 "type": "integer"
               },
               "isActive": {
@@ -19699,7 +19712,7 @@
                           "documentId": {
                             "type": "string"
                           },
-                          "title": {
+                          "name": {
                             "type": "string"
                           },
                           "slug": {
@@ -20426,7 +20439,7 @@
                               }
                             }
                           },
-                          "subcategories": {
+                          "subcategory": {
                             "type": "object",
                             "properties": {
                               "id": {
@@ -20640,7 +20653,10 @@
                               "primaryColor": {
                                 "type": "string"
                               },
-                              "brandDescription": {
+                              "title": {
+                                "type": "string"
+                              },
+                              "description": {
                                 "type": "string"
                               },
                               "brandEspecialties": {
