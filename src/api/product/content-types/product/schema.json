@@ -26,7 +26,7 @@
       "required": true
     },
     "description": {
-      "type": "string",
+      "type": "text",
       "maxLength": 250,
       "required": true
     },
