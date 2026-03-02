@@ -541,6 +541,41 @@ export interface ApiCategoryCategory extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiEventsPageEventsPage extends Struct.SingleTypeSchema {
+  collectionName: 'events_pages';
+  info: {
+    displayName: 'Pagina de eventos';
+    pluralName: 'events-pages';
+    singularName: 'events-page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    description: Schema.Attribute.Text;
+    events: Schema.Attribute.Component<'content.event', true>;
+    heroImage: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::events-page.events-page'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    title: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 250;
+      }>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiLegalContentLegalContent extends Struct.SingleTypeSchema {
   collectionName: 'legal_contents';
   info: {
@@ -1298,6 +1333,7 @@ declare module '@strapi/strapi' {
       'admin::user': AdminUser;
       'api::brand.brand': ApiBrandBrand;
       'api::category.category': ApiCategoryCategory;
+      'api::events-page.events-page': ApiEventsPageEventsPage;
       'api::legal-content.legal-content': ApiLegalContentLegalContent;
       'api::product.product': ApiProductProduct;
       'api::purchase-benefit.purchase-benefit': ApiPurchaseBenefitPurchaseBenefit;

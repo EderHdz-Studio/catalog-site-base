@@ -19,6 +19,53 @@ export interface ContentBrandSpecialty extends Struct.ComponentSchema {
   };
 }
 
+export interface ContentEvent extends Struct.ComponentSchema {
+  collectionName: 'components_content_events';
+  info: {
+    displayName: 'event';
+  };
+  attributes: {
+    endDate: Schema.Attribute.Date;
+    endTime: Schema.Attribute.Time;
+    eventType: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 20;
+      }>;
+    instructionsRegisterSuccess: Schema.Attribute.String &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 250;
+      }>;
+    isActive: Schema.Attribute.Boolean &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<true>;
+    locationLabel: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 30;
+      }>;
+    locationUrlMaps: Schema.Attribute.String &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 250;
+      }>;
+    startDate: Schema.Attribute.Date;
+    startTime: Schema.Attribute.Time;
+    subtitle: Schema.Attribute.String &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 60;
+      }>;
+    title: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+      }>;
+    titleRegisterSuccess: Schema.Attribute.String &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 80;
+      }>;
+  };
+}
+
 export interface ContentLegalContent extends Struct.ComponentSchema {
   collectionName: 'components_content_legal_contents';
   info: {
@@ -170,6 +217,7 @@ declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
       'content.brand-specialty': ContentBrandSpecialty;
+      'content.event': ContentEvent;
       'content.legal-content': ContentLegalContent;
       'layout.social-link': LayoutSocialLink;
       'product.faq-item': ProductFaqItem;

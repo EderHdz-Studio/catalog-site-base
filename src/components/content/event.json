@@ -1,0 +1,58 @@
+{
+  "collectionName": "components_content_events",
+  "info": {
+    "displayName": "event"
+  },
+  "options": {},
+  "attributes": {
+    "eventType": {
+      "type": "string",
+      "maxLength": 20,
+      "required": true
+    },
+    "isActive": {
+      "type": "boolean",
+      "required": true,
+      "default": true
+    },
+    "title": {
+      "type": "string",
+      "maxLength": 100,
+      "required": true
+    },
+    "subtitle": {
+      "type": "string",
+      "maxLength": 60
+    },
+    "locationUrlMaps": {
+      "type": "string",
+      "maxLength": 250
+    },
+    "locationLabel": {
+      "type": "string",
+      "maxLength": 30,
+      "required": true
+    },
+    "startDate": {
+      "type": "date"
+    },
+    "endDate": {
+      "type": "date"
+    },
+    "startTime": {
+      "type": "time"
+    },
+    "endTime": {
+      "type": "time"
+    },
+    "titleRegisterSuccess": {
+      "type": "string",
+      "maxLength": 80
+    },
+    "instructionsRegisterSuccess": {
+      "type": "string",
+      "maxLength": 250
+    }
+  },
+  "config": {}
+}

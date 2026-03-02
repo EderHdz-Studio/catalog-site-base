@@ -1,0 +1,36 @@
+{
+  "kind": "singleType",
+  "collectionName": "events_pages",
+  "info": {
+    "singularName": "events-page",
+    "pluralName": "events-pages",
+    "displayName": "Pagina de eventos"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "maxLength": 250,
+      "required": true
+    },
+    "description": {
+      "type": "text"
+    },
+    "heroImage": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "events": {
+      "type": "component",
+      "component": "content.event",
+      "repeatable": true
+    }
+  }
+}
