@@ -52,6 +52,13 @@
     "instructionsRegisterSuccess": {
       "type": "string",
       "maxLength": 250
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images"
+      ]
     }
   },
   "config": {}

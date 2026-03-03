@@ -32,6 +32,7 @@ export interface ContentEvent extends Struct.ComponentSchema {
       Schema.Attribute.SetMinMaxLength<{
         maxLength: 20;
       }>;
+    image: Schema.Attribute.Media<'images'>;
     instructionsRegisterSuccess: Schema.Attribute.String &
       Schema.Attribute.SetMinMaxLength<{
         maxLength: 250;
