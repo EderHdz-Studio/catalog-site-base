@@ -1,0 +1,40 @@
+{
+  "collectionName": "components_content_sliders",
+  "info": {
+    "displayName": "slider"
+  },
+  "options": {},
+  "attributes": {
+    "url": {
+      "type": "string",
+      "default": "/",
+      "required": true
+    },
+    "desktopImage": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "mobileImage": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "isActive": {
+      "type": "boolean",
+      "required": true,
+      "default": true
+    },
+    "displayOrder": {
+      "type": "integer",
+      "default": 0
+    }
+  },
+  "config": {}
+}

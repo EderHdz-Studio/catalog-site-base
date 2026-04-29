@@ -41,7 +41,7 @@
     "heroImage": {
       "type": "media",
       "multiple": false,
-      "required": true,
+      "required": false,
       "allowedTypes": [
         "images"
       ]
@@ -77,6 +77,16 @@
       "relation": "oneToMany",
       "target": "api::subcategory.subcategory",
       "mappedBy": "category"
+    },
+    "sliderHero": {
+      "type": "component",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "content.slider",
+      "repeatable": false
     }
   }
 }

@@ -140,6 +140,24 @@ export interface ContentLegalContent extends Struct.ComponentSchema {
   };
 }
 
+export interface ContentSlider extends Struct.ComponentSchema {
+  collectionName: 'components_content_sliders';
+  info: {
+    displayName: 'slider';
+  };
+  attributes: {
+    desktopImage: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
+    displayOrder: Schema.Attribute.Integer & Schema.Attribute.DefaultTo<0>;
+    isActive: Schema.Attribute.Boolean &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<true>;
+    mobileImage: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
+    url: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<'/'>;
+  };
+}
+
 export interface LayoutSocialLink extends Struct.ComponentSchema {
   collectionName: 'components_layout_social_links';
   info: {
@@ -270,6 +288,7 @@ declare module '@strapi/strapi' {
       'content.brand-specialty': ContentBrandSpecialty;
       'content.event': ContentEvent;
       'content.legal-content': ContentLegalContent;
+      'content.slider': ContentSlider;
       'layout.social-link': LayoutSocialLink;
       'product.faq-item': ProductFaqItem;
       'product.technical-feature': ProductTechnicalFeature;

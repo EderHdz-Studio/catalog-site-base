@@ -620,7 +620,7 @@ export interface ApiCategoryCategory extends Struct.CollectionTypeSchema {
       Schema.Attribute.SetMinMaxLength<{
         maxLength: 800;
       }>;
-    heroImage: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
+    heroImage: Schema.Attribute.Media<'images'>;
     isActive: Schema.Attribute.Boolean &
       Schema.Attribute.Required &
       Schema.Attribute.DefaultTo<true>;
@@ -642,6 +642,12 @@ export interface ApiCategoryCategory extends Struct.CollectionTypeSchema {
       Schema.Attribute.Required &
       Schema.Attribute.SetMinMaxLength<{
         maxLength: 250;
+      }>;
+    sliderHero: Schema.Attribute.Component<'content.slider', false> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
       }>;
     slug: Schema.Attribute.UID<'name'> & Schema.Attribute.Required;
     subcategories: Schema.Attribute.Relation<
@@ -689,6 +695,34 @@ export interface ApiEventsPageEventsPage extends Struct.SingleTypeSchema {
       Schema.Attribute.SetMinMaxLength<{
         maxLength: 250;
       }>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiHomePageHomePage extends Struct.SingleTypeSchema {
+  collectionName: 'home_pages';
+  info: {
+    displayName: 'P\u00E1gina Home';
+    pluralName: 'home-pages';
+    singularName: 'home-page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::home-page.home-page'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    sliderHero: Schema.Attribute.Component<'content.slider', true>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1635,6 +1669,7 @@ declare module '@strapi/strapi' {
       'api::brand.brand': ApiBrandBrand;
       'api::category.category': ApiCategoryCategory;
       'api::events-page.events-page': ApiEventsPageEventsPage;
+      'api::home-page.home-page': ApiHomePageHomePage;
       'api::legal-content.legal-content': ApiLegalContentLegalContent;
       'api::product.product': ApiProductProduct;
       'api::promo-slider.promo-slider': ApiPromoSliderPromoSlider;
