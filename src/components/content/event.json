@@ -24,9 +24,8 @@
       "type": "string",
       "maxLength": 60
     },
-    "locationUrlMaps": {
-      "type": "string",
-      "maxLength": 250
+    "locationUrl": {
+      "type": "text"
     },
     "locationLabel": {
       "type": "string",

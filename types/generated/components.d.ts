@@ -87,10 +87,7 @@ export interface ContentEvent extends Struct.ComponentSchema {
       Schema.Attribute.SetMinMaxLength<{
         maxLength: 30;
       }>;
-    locationUrlMaps: Schema.Attribute.String &
-      Schema.Attribute.SetMinMaxLength<{
-        maxLength: 250;
-      }>;
+    locationUrl: Schema.Attribute.Text;
     startDate: Schema.Attribute.Date;
     startTime: Schema.Attribute.Time;
     subtitle: Schema.Attribute.String &
